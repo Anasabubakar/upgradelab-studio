@@ -1,0 +1,17 @@
+{
+  "package": "upgradelab-runner",
+  "version": "0.1.0",
+  "commit": "6bd5696fff1e91212c087ff417779cc90b2ae7fe",
+  "reportVersion": 1,
+  "schemaSha256": "fa818e4ad60bbfd8c98960a9bb57c0cebaaa0f750814cfdb992ac26d59bc2706",
+  "reports": {
+    "vault-broken-double-balance.report.json": "8a2011fa913b258d466236da6ab77d75877c7665031a0a63e62eaaa1f2ec77aa",
+    "vault-broken-lose-balance.report.json": "c30cdcf462a265b4ce3e54db78ac9f115ad7bcfd9cfb25cdc0526afcee977af8",
+    "vault-broken-not-idempotent.report.json": "cb562ceee23f3b5fb2a44186bc4e9cd40b3bc770bf7bf4a1dfad751c2e45f5f3",
+    "vault-broken-reinit.report.json": "e2d3c9b62482b7c69c360778e9c339db68ddc732952d76e9a66af037647e14e9",
+    "vault-broken-upgrade-auth.report.json": "0d7c38ff4171ddc10d0dadf4e38d585e4cf62d3ea2487f9e2713a338b91f9dff",
+    "vault-correct.report.json": "5012f76a169f1165be53bbdbd5e0b757fb786e054e502d38e755fde58708e0b1",
+    "vault-correct.testnet.report.json": "7f6a7da1dd2ae1997db55c18b11d147957ed92e48c031d8e3de69cf66ad3d342"
+  },
+  "vendoredFor": "upgradelab-studio"
+}
