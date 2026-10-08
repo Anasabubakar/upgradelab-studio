@@ -28,10 +28,12 @@ for (const f of readdirSync(tnDir).filter((n) => n.endsWith(".report.json")).sor
   reports[f] = sha(join(out, "reports", f));
 }
 
+// Testnet recordings are real on-chain runs and keep the runner version that recorded them.
+const sampleReportsRecordedWith = [...new Set(Object.keys(reports).map((f) => JSON.parse(readFileSync(join(out, "reports", f), "utf8")).tool.runnerVersion))].sort();
 writeFileSync(
   join(out, "VERSION.json"),
   JSON.stringify(
-    { package: "upgradelab-runner", version, commit, reportVersion: 1, schemaSha256: sha(join(out, "report.v1.schema.json")), reports, vendoredFor: "upgradelab-studio" },
+    { package: "upgradelab-runner", version, commit, reportVersion: 1, sampleReportsRecordedWith, schemaSha256: sha(join(out, "report.v1.schema.json")), reports, vendoredFor: "upgradelab-studio" },
     null,
     2,
   ) + "\n",
