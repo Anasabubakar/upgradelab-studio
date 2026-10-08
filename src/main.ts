@@ -16,6 +16,7 @@ const LABELS: Record<string, string> = {
   "vault-broken-upgrade-auth.report.json": "Broken: unauthorized upgrade path",
   "vault-broken-not-idempotent.report.json": "Broken: migration not idempotent",
   "vault-correct.testnet.report.json": "Corrected path on Stellar testnet",
+  "rerun-2026-10-08.report.json": "Corrected path on Stellar testnet (second recording, 2026-10-08)",
 };
 
 interface Loaded {
