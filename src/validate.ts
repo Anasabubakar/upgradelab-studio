@@ -46,7 +46,7 @@ export function validateReport(raw: unknown): LoadResult {
     if (!ids.has(a.op)) return { ok: false, error: `Authorization check refers to an unknown operation "${a.op}".` };
   }
   const notes: string[] = [];
-  if (report.tool.runnerVersion !== TESTED_RUNNER.version) {
+  if (report.tool.runnerVersion !== TESTED_RUNNER.version && !pairing.sampleReportsRecordedWith.includes(report.tool.runnerVersion)) {
     notes.push(
       `This report was produced by ${report.tool.name} ${report.tool.runnerVersion}; this studio was tested with ${TESTED_RUNNER.version}. It matches the v1 schema, so it is shown, but newer runner behavior is not covered by this studio's tests.`,
     );

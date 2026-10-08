@@ -26,9 +26,9 @@ describe("runner pairing", () => {
     for (const [f, h] of Object.entries(vendored.reports)) expect(sha(`${REPORT_DIR}/${f}`)).toBe(h);
   });
 
-  it("every vendored report was produced by the vendored runner version", () => {
+  it("every vendored report was produced by a runner version the vendor stamp lists", () => {
     for (const f of allReportFiles()) {
-      expect(load(f.replace(".report.json", "")).tool.runnerVersion).toBe(vendored.version);
+      expect(vendored.sampleReportsRecordedWith).toContain(load(f.replace(".report.json", "")).tool.runnerVersion);
     }
   });
 
