@@ -50,3 +50,9 @@ pnpm run typecheck && pnpm test && pnpm run build     # 36 tests (vitest, jsdom)
 Engineering complete for v0.1; verified in a real browser at desktop and 375 px. Pushed to GitHub with CI green; not published to npm. No Soroban upgrade or security reviewer has looked at the invariants the reports show.
 
 MIT licensed.
+
+## Contributors
+
+<a href="https://github.com/Anasabubakar/upgradelab-studio/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Anasabubakar/upgradelab-studio" alt="Contributors to upgradelab-studio" />
+</a>
