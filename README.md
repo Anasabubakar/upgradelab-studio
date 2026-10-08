@@ -1,8 +1,13 @@
+<p align="center"><img src="docs/assets/banner.svg" alt="upgradelab-studio" width="100%"></p>
+
 # upgradelab-studio
 
-**Documentation:** https://stellar-developer-tools.gitbook.io/upgradelab-studio/
+[![CI](https://github.com/Upgrade-Lab/upgradelab-studio/actions/workflows/ci.yml/badge.svg)](https://github.com/Upgrade-Lab/upgradelab-studio/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/Upgrade-Lab/upgradelab-studio)](https://github.com/Upgrade-Lab/upgradelab-studio/releases)
 
-A static viewer for [UpgradeLab](https://github.com/Anasabubakar/upgradelab-runner) migration-rehearsal reports. It opens on a broken migration next to the corrected one, using **real reports the runner generated**, and shows invariants with their evidence, the executed-operations timeline, the state at any checkpoint, and which execution category produced each result.
+[Documentation](https://stellar-developer-tools.gitbook.io/upgradelab-studio/) · [Live demo](https://upgradelab-studio-anasamasama.vercel.app) · [Core repository](https://github.com/Upgrade-Lab/upgradelab-runner) · [Issues](https://github.com/Upgrade-Lab/upgradelab-studio/issues) · [Discussions](https://github.com/Upgrade-Lab/upgradelab-studio/discussions)
+
+
+A static viewer for [UpgradeLab](https://github.com/Upgrade-Lab/upgradelab-runner) migration-rehearsal reports. It opens on a broken migration next to the corrected one, using **real reports the runner generated**, and shows invariants with their evidence, the executed-operations timeline, the state at any checkpoint, and which execution category produced each result.
 
 It never executes contract code or user code. It only reads JSON, validates it with a precompiled validator and draws it with text nodes. Hosted demo: https://upgradelab-studio-anasamasama.vercel.app. Run it locally below.
 
@@ -53,8 +58,42 @@ Engineering complete for v0.1; verified in a real browser at desktop and 375 px.
 
 MIT licensed.
 
+## Repository layout
+
+- `docs/`: decision records (ADRs), evidence and assets
+- `gitbook/`: source of the GitBook documentation
+- `scripts/`: build, generation and recording scripts
+- `src/`: source
+- `test/`: tests
+- `vendor/`: pinned artifacts from the paired core repository
+
+## Documentation
+
+The full documentation is at https://stellar-developer-tools.gitbook.io/upgradelab-studio/. It is built from the `gitbook/` folder of this repository and synced from `main`, so a fix to a page is a pull request here.
+
+## Contributing
+
+Open issues are scoped so one person can finish one in a single cycle, and each lists acceptance criteria. Read [CONTRIBUTING.md](CONTRIBUTING.md), pick an issue from the [issue list](https://github.com/Upgrade-Lab/upgradelab-studio/issues), and say you are taking it before you start. Security reports go through [SECURITY.md](SECURITY.md), not public issues.
+
+## Maintainers
+
+| Maintainer | Role | GitHub |
+|---|---|---|
+| Anas Abubakar | Lead maintainer | [@Anasabubakar](https://github.com/Anasabubakar) |
+| Abdulbasit Fazazi | Co-maintainer | [@fazaziishola-coder](https://github.com/fazaziishola-coder) |
+
+## Community
+
+Questions and design discussion go in [GitHub Discussions](https://github.com/Upgrade-Lab/upgradelab-studio/discussions). Bugs and scoped work go in [Issues](https://github.com/Upgrade-Lab/upgradelab-studio/issues).
+
+## License
+
+MIT. See [LICENSE](LICENSE).
+
 ## Contributors
 
-<a href="https://github.com/Anasabubakar/upgradelab-studio/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Anasabubakar/upgradelab-studio" alt="Contributors to upgradelab-studio" />
+Thanks to all the contributors who have made this project possible.
+
+<a href="https://github.com/Upgrade-Lab/upgradelab-studio/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Upgrade-Lab/upgradelab-studio" alt="Contributors to upgradelab-studio" />
 </a>
