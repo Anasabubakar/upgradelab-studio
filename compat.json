@@ -3,7 +3,7 @@
   "pairs": [
     {
       "runner": "upgradelab-runner",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "reportVersion": 1,
       "status": "tested"
     }

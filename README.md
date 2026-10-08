@@ -37,7 +37,7 @@ Not a sibling-path import. `vendor/upgradelab-runner/` holds the runner's `repor
 
 | studio | upgradelab-runner | report version | status |
 |---|---|---|---|
-| 0.1.0 | 0.1.0 | 1 | tested |
+| 0.1.1 | 0.1.1 | 1 | tested |
 
 Tests check `compat.json`, `VERSION.json`, the report hashes, that every vendored report validates and carries the vendored runner version, and that the generated validator is current with the vendored schema.
 
