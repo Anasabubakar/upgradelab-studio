@@ -1,6 +1,11 @@
 {
-  "studio": "0.1.0",
+  "studio": "0.1.1",
   "pairs": [
-    { "runner": "upgradelab-runner", "version": "0.1.0", "reportVersion": 1, "status": "tested" }
+    {
+      "runner": "upgradelab-runner",
+      "version": "0.1.0",
+      "reportVersion": 1,
+      "status": "tested"
+    }
   ]
 }
