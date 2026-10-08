@@ -37,6 +37,10 @@ export function validateReport(raw: unknown): LoadResult {
   if (c.pass !== v.passed || c.fail !== v.failed || c.inconclusive !== v.inconclusive) {
     return { ok: false, error: "Report verdict counts do not agree with its invariant results." };
   }
+  const expected = c.fail > 0 ? "fail" : c.inconclusive > 0 ? "inconclusive" : "pass";
+  if (v.status !== expected) {
+    return { ok: false, error: `Inconsistent report: its headline verdict is "${v.status}" but its invariant results give "${expected}".` };
+  }
   const ids = new Set(report.executedOps.map((o) => o.id));
   for (const a of report.authChecks) {
     if (!ids.has(a.op)) return { ok: false, error: `Authorization check refers to an unknown operation "${a.op}".` };

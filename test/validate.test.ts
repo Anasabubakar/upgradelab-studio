@@ -68,3 +68,27 @@ describe("report validation", () => {
     if (r.ok) expect(r.notes[0]).toMatch(/9\.9\.9/);
   });
 });
+
+describe("headline verdict consistency", () => {
+  it("rejects a report whose failed invariants are hidden behind a pass verdict", async () => {
+    const { readFileSync, readdirSync } = await import("node:fs");
+    const dir = "vendor/upgradelab-runner/reports";
+    const f = readdirSync(dir).find((n) => n.includes("lose-balance") && n.endsWith(".json"))!;
+    const raw = JSON.parse(readFileSync(`${dir}/${f}`, "utf8"));
+    expect(raw.verdict.status).toBe("fail");
+    raw.verdict.status = "pass";
+    const r = validateReport(raw);
+    expect(r).toMatchObject({ ok: false });
+    if (!r.ok) expect(r.error).toMatch(/headline verdict is "pass"/);
+  });
+  it("rejects a pass report relabelled as fail, and accepts every real report", async () => {
+    const { readFileSync, readdirSync } = await import("node:fs");
+    const dir = "vendor/upgradelab-runner/reports";
+    for (const f of readdirSync(dir).filter((n) => n.endsWith(".json"))) {
+      const raw = JSON.parse(readFileSync(`${dir}/${f}`, "utf8"));
+      expect(validateReport(raw).ok, f).toBe(true);
+      raw.verdict.status = raw.verdict.status === "pass" ? "fail" : "pass";
+      expect(validateReport(raw).ok, f + " flipped").toBe(false);
+    }
+  });
+});
