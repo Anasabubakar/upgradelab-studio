@@ -2,7 +2,7 @@
 
 A static viewer for [UpgradeLab](../upgradelab-runner) migration-rehearsal reports. It opens on a broken migration next to the corrected one, using **real reports the runner generated**, and shows invariants with their evidence, the executed-operations timeline, the state at any checkpoint, and which execution category produced each result.
 
-It never executes contract code or user code. It only reads JSON, validates it with a precompiled validator and draws it with text nodes. Hosted demo: not deployed (see Status). Run it locally below.
+It never executes contract code or user code. It only reads JSON, validates it with a precompiled validator and draws it with text nodes. Hosted demo: https://upgradelab-studio-anasamasama.vercel.app. Run it locally below.
 
 ## Run
 
@@ -47,6 +47,6 @@ pnpm run typecheck && pnpm test && pnpm run build     # 36 tests (vitest, jsdom)
 ```
 
 ## Status
-Engineering complete for v0.1; verified in a real browser at desktop and 375 px. Not done: hosted deployment (publishing not authorized), GitHub publishing and CI run. No Soroban upgrade or security reviewer has looked at the invariants the reports show.
+Engineering complete for v0.1; verified in a real browser at desktop and 375 px. Pushed to GitHub with CI green; not published to npm. No Soroban upgrade or security reviewer has looked at the invariants the reports show.
 
 MIT licensed.
